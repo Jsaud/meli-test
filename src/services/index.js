@@ -11,7 +11,7 @@ import {
 
 // Función para hacer la llamada a la API
 const fetchProductsApi = (search) => {
-  return axios.get(`https://api.mercadolibre.com/sites/MLA/search?q=${search}`);
+  return axios.get(`https://api.mercadolibre.com/sites/MLA/search?q=${search}&limit=20`);
 };
 
 // Función para hacer la llamada a la API de detalles de un producto

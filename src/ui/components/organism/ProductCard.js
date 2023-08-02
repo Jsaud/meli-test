@@ -29,12 +29,11 @@ const ProductCard = ({ productArray }) => {
                     <div className="d-flex">
                       <div className="col-md-4">
                         { product.shipping.free_shipping 
-                          ? <p className="mb-2 btn-free-shipping">Envío gratis</p>
-                          : '' 
+                          && <p className="mb-2 btn-free-shipping">Envío gratis</p>
                         } 
                       </div>
                       { product.shipping.tags.includes('self_service_in')
-                        ? <div className="col-md-4">
+                        && <div className="col-md-4">
                             <p className="mb-2 full-flex">
                               <img
                                 src={lightning}
@@ -45,7 +44,6 @@ const ProductCard = ({ productArray }) => {
                               FULL
                             </p>
                           </div>
-                        : '' 
                       } 
                     </div>
                   </div>
