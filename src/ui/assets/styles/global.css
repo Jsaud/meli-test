@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Ubuntu:wght@300&display=swap');
+
+* {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+:root {
+  --primary-color: #fcbf49;
+  --secondary-color: #2968c8;
+  --tertiary-color: #ebebeb;
+}
+
+.background-grey {
+  background: #ededed;
+}
+
