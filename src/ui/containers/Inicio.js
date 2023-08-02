@@ -9,8 +9,9 @@ const Inicio = () => {
   const [search, setSearch] = useState("");
 
   const dispatch = useDispatch();
-  const { data, loading } = useSelector((state) => state);
+  const { data, loading } = useSelector((state) => state.products);
   const productArray = data?.results;
+
   const products = [
     "zapatilla",
     "raquetas",
@@ -20,7 +21,6 @@ const Inicio = () => {
     "tenis",
   ];
 
-  console.log(productArray);
   const onSearchChange = (event) => {
     setSearch(event.target.value);
   };

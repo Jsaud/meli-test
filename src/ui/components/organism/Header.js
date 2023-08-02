@@ -9,9 +9,9 @@ const Header = () => {
   return (
     <>
       <Wrapper>
-        <nav class="navbar head">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="/">
+        <nav className="navbar head">
+          <div className="container-fluid">
+            <a className="navbar-brand" href="/">
               <img
                 src={logo}
                 alt="compreLibre"

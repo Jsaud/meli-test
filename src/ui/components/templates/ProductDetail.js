@@ -1,23 +1,17 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 
-import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import Wrapper from "../organism/StylesProductDetail";
 
-import Wrapper from "./StylesProductDetail";
+const ProductCardTemplate = () => {
 
-const ProductCard = () => {
-
-  const { data } = useSelector((state) => state);
-  const productArray = data?.results;
-  const { productId } = useParams();
-  const product = productArray.find(
-    (p) => p.id.toString().localeCompare(productId) === 0
-  );
+  const { data } = useSelector((state) => state.productsDetail);
+  const product = data;
 
   return (
     <>
-      <Wrapper>
+      { <Wrapper>
         <div className="background-grey">
           <div className="container">
             <div className="row">
@@ -67,9 +61,9 @@ const ProductCard = () => {
             </div>
           </div>
         </div>
-      </Wrapper>
+      </Wrapper>}
     </>
   );
 };
 
-export default ProductCard;
+export default ProductCardTemplate;

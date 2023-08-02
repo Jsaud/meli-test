@@ -1,41 +1,9 @@
-// reducers.js
-import {
-  FETCH_PRODUCTS_REQUEST,
-  FETCH_PRODUCTS_SUCCESS,
-  FETCH_PRODUCTS_FAILURE,
-} from "../actions";
+import { combineReducers } from "redux";
+import { productsReducer, productsDetailReducer } from "./products";
 
-const initialState = {
-  data: {},
-  loading: false,
-  error: null,
-};
+const rootReducer = combineReducers({
+  products: productsReducer,
+  productsDetail: productsDetailReducer,
+});
 
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case FETCH_PRODUCTS_REQUEST:
-      return {
-        ...state,
-        loading: true,
-      };
-    case FETCH_PRODUCTS_SUCCESS:
-      return {
-        ...state,
-        data: action.payload,
-        loading: false,
-        error: null,
-      };
-    case FETCH_PRODUCTS_FAILURE:
-      return {
-        ...state,
-        loading: false,
-        error: action.payload,
-      };
-    default:
-      return state;
-  }
-};
-
-
-
-export default reducer;
+export default rootReducer;

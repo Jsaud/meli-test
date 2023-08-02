@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Header from "../components/organism/Header";
 import Footer from "../components/organism/Footer";
-import ProductDetail from "../components/organism/ProductDetail";
 
 import Inicio from "../containers/Inicio";
+import ProductDetail from "../containers/ProductDetail";
 
 const App = () => {
   return (
