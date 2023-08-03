@@ -12,8 +12,8 @@ const ProductCard = ({ productArray }) => {
       <Wrapper>
         <div className="row">
           {productArray?.map((product) => (
-            <div className="col-12 col-md-6 col-xl-4 col-xxl-3">
-              <Link to={`/product/${product.id}`} key={product.id} className="disabled-link">
+            <div className="col-12 col-md-6 col-xl-4 col-xxl-3" key={product.id}>
+              <Link to={`/product/${product.id}`} className="disabled-link">
                 <div className="card m-3 mx-md-0 bg-body rounded">
                   <img
                     width="160"

@@ -6,21 +6,28 @@ import start from "../../assets/img/start.png";
 
 import Wrapper from "../organism/Search/styles";
 
-const ProductCardTemplate = ({product, internalMemory, ram, color, invoice, warranty, warrantyType}) => {
-
+const ProductCardTemplate = ({
+  product,
+  internalMemory,
+  ram,
+  color,
+  invoice,
+  warranty,
+  warrantyType,
+}) => {
   return (
     <>
       <Wrapper>
         <div className="background-grey">
           <div className="container">
             <div className="row">
-              <div className="col-4 mt-2">
+              <div className="col-12 mt-2">
                 <Link to="/">Volver</Link>
               </div>
 
               <div className="col-12 mt-2 mb-3">
                 <div className="card">
-                  <div className="d-flex mt-4">
+                  <div className="row mt-4">
                     <div className="col-md-4">
                       <img
                         width="250"
@@ -56,6 +63,7 @@ const ProductCardTemplate = ({product, internalMemory, ram, color, invoice, warr
                                     ? "btn-product-attr"
                                     : "btn-product-attr-grey"
                                 }
+                                key={value.id}
                               >
                                 {value.name}
                               </p>
@@ -65,7 +73,7 @@ const ProductCardTemplate = ({product, internalMemory, ram, color, invoice, warr
                       )}
 
                       {ram && (
-                        <div className="col-md-12 mt-2">
+                        <div className="col-md-3 br-product p-2">
                           <p className="mb-2">
                             {ram.name}: {ram.value_name}
                           </p>
@@ -170,7 +178,6 @@ const ProductCardTemplate = ({product, internalMemory, ram, color, invoice, warr
                       )}
                     </div>
                   </div>
-
                   <div className="col-md-10 offset-md-1 mt-4">
                     <h5>Características de : {product.title}</h5>
                   </div>
