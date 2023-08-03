@@ -12,29 +12,23 @@ const ProductCardTemplate = () => {
   const { data } = useSelector((state) => state.productsDetail);
   const product = data;
 
-  const internalMemory = product.attributes.find(obj => {
-    return obj.id === 'INTERNAL_MEMORY';
+  const attributeIds = ['INTERNAL_MEMORY', 'RAM', 'COLOR'];
+  const saleTermIds = ['INVOICE', 'WARRANTY_TIME', 'WARRANTY_TYPE'];
+  
+  const attributes = {};
+  const saleTerms = {};
+  
+  attributeIds.forEach(id => {
+    attributes[id] = product?.attributes?.find(obj => obj.id === id);
   });
-
-  const ram = product.attributes.find(obj => {
-    return obj.id === 'RAM';
+  
+  saleTermIds.forEach(id => {
+    saleTerms[id] = product?.sale_terms?.find(obj => obj.id === id);
   });
-
-  const color = product.attributes.find(obj => {
-    return obj.id === 'COLOR';
-  });
-
-  const invoice = product.sale_terms.find(obj => {
-    return obj.id === 'INVOICE';
-  });
-
-  const warranty = product.sale_terms.find(obj => {
-    return obj.id === 'WARRANTY_TIME';
-  });
-
-  const warrantyType = product.sale_terms.find(obj => {
-    return obj.id === 'WARRANTY_TYPE';
-  });
+  
+  const { INTERNAL_MEMORY: internalMemory, RAM: ram, COLOR: color } = attributes;
+  const { INVOICE: invoice, WARRANTY_TIME: warranty, WARRANTY_TYPE: warrantyType } = saleTerms;
+  
 
   return (
     <>
@@ -124,7 +118,7 @@ const ProductCardTemplate = () => {
                     </div>
 
                     <div className="col-md-3 br-product p-2">
-                      {product.shipping.tags.includes('self_service_in') &&
+                      {product.shipping?.tags.includes('self_service_in') &&
                         <div className="col-md-4 mt-1 ms-1">
                           <p className="mb-2 full-flex">
                             <img
@@ -167,15 +161,15 @@ const ProductCardTemplate = () => {
 
                      {warranty &&
                         <div className="col-md-12 mt-2">
-                          <p className="mb-2 lighter-grey">
-                            <img
-                              src={start}
-                              alt="compreLibre"
-                              width="15"
-                              height="15"
-                            />
-                            {warranty.value_name} de {warrantyType.value_name}.
-                          </p>
+                         <p className="mb-2 lighter-grey">
+                          <img
+                            src={start}
+                            alt="compreLibre"
+                            width="15"
+                            height="15"
+                          />
+                          {warranty.value_name} de {warrantyType.value_name}.
+                        </p>
                         </div>
                       }
                     </div>
@@ -185,7 +179,7 @@ const ProductCardTemplate = () => {
                     <h5>Características de : {product.title}</h5>
                   </div>
                   <div className="col-md-10 offset-md-1 mt-1">
-                    <table class="table table-striped">
+                    <table className="table table-striped">
                       <tbody>
                         {product.attributes?.map((attr) => (
                           <tr>
@@ -201,7 +195,8 @@ const ProductCardTemplate = () => {
             </div>
           </div>
         </div>
-      </Wrapper>}
+      </Wrapper>
+      }
     </>
   );
 };
