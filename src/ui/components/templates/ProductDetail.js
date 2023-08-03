@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import lightning from "../../assets/img/lightning.png"
 import start from "../../assets/img/start.png"
 
-import Wrapper from "../organism/StylesProductDetail";
+import Wrapper from "../organism/Search/styles";
 
 const ProductCardTemplate = () => {
 

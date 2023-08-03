@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
-import lightning from "../../assets/img/lightning.png"
+import lightning from "../../../assets/img/lightning.png"
 
-import Wrapper from "./StylesProductCard";
+import Wrapper from "./styles";
 
 
 const ProductCard = ({ productArray }) => {

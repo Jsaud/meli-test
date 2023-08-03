@@ -1,8 +1,8 @@
 import React from "react";
 //img
-import logo from "../../assets/img/logo.png"
+import logo from "../../../assets/img/logo.png"
 
-import Wrapper from "./StylesHeader";
+import Wrapper from "./styles";
 
 
 const Header = () => {

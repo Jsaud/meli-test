@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 //actions
 import { fetchProductsRequest } from "../../actions";
 //Components
-import InicioTemplate from "../components/templates/Inicio";
+import InicioTemplate from "../components/templates/Home";
 
 const Inicio = () => {
   const [search, setSearch] = useState("");

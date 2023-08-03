@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "../components/organism/Header";
 import Footer from "../components/organism/Footer";
 
-import Inicio from "../containers/Inicio";
+import Home from "../containers/Home";
 import ProductDetail from "../containers/ProductDetail";
 
 const App = () => {
@@ -12,7 +12,7 @@ const App = () => {
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<Inicio />} />
+        <Route path="/" element={<Home />} />
         <Route path="/product/:productId" element={<ProductDetail />} />
       </Routes>
       <Footer />
