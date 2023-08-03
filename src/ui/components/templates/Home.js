@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import Search from "../organism/Search";
 import ProductCard from "../organism/ProductCard";
+import LoaderHome from "../organism/Loader";
 
 const HomeTemplate = ({
   loading,
@@ -13,20 +14,24 @@ const HomeTemplate = ({
 }) => {
   return (
     <>
-      <div className="background-grey">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-12 col-md-8 col-xl-6 col-xxl-6 ">
-              <Search
-                search={search}
-                onSearchChange={onSearchChange}
-                handleSearchSubmit={handleSearchSubmit}
-              />
+      {loading ? (
+        <LoaderHome />
+      ) : (
+        <div className="background-grey">
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-12 col-md-8 col-xl-6 col-xxl-6 ">
+                <Search
+                  search={search}
+                  onSearchChange={onSearchChange}
+                  handleSearchSubmit={handleSearchSubmit}
+                />
+              </div>
             </div>
+            <ProductCard productArray={productArray} />
           </div>
-          <ProductCard productArray={productArray} />
         </div>
-      </div>
+      )}
     </>
   );
 };
