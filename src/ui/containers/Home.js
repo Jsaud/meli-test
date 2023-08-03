@@ -12,13 +12,7 @@ const Home = () => {
   const { data, loading } = useSelector((state) => state.products);
   const productArray = data?.results;
 
-  const products = [
-    "raquetas",
-    "pelotas tenis",
-    "accesorios tenis",
-    "padel",
-    "tenis",
-  ];
+  const products = ["Xiaomi", "Huawei", "samsung galaxy", "iphone", "motorola"];
 
   const onSearchChange = (event) => {
     setSearch(event.target.value);

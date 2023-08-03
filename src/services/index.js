@@ -19,7 +19,7 @@ const fetchProductDetailsApi = (itemId) => {
   return axios.get(`https://api.mercadolibre.com/items/${itemId}`);
 };
 
-function* fetchProductsSaga(action) {
+export function* fetchProductsSaga(action) {
   try {
     const { payload } = action;
     const response = yield call(fetchProductsApi, payload);
@@ -29,7 +29,7 @@ function* fetchProductsSaga(action) {
   }
 }
 
-function* fetchProductDetailsSaga(action) {
+export function* fetchProductDetailsSaga(action) {
   try {
     const { payload } = action;
     const response = yield call(fetchProductDetailsApi, payload);

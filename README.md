@@ -30,22 +30,11 @@ Inicia la aplicación.
 
 - npm start
 
+test unitarios.
+
+- npm test
+
 ## Estructura del Proyecto
 
 La estructura del proyecto está organizada siguiendo el patrón de diseño atómico y separando los contenedores y componentes:
-
-src/
-|-- -testt_/
-|-- actions/
-|-- reducers/
-|-- services/
-|-- ui/
-|   |-- assets/
-|   |-- components/
-|   |--- organism/
-|   |--- template/
-|   |-- container/
-|   |-- pages/
-|-- index/
-|-- reportWebVitals/
 
