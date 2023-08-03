@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import Search from "../organism/Search";
 import ProductCard from "../organism/ProductCard";
 
-const InicioTemplate = ({
+const HomeTemplate = ({
   loading,
   search,
   onSearchChange,
@@ -26,16 +26,16 @@ const InicioTemplate = ({
           </div>
           <ProductCard productArray={productArray} />
         </div>
-      </div>
+      </div>x
     </>
   );
 };
 
-InicioTemplate.propTypes = {
+HomeTemplate.propTypes = {
   search: PropTypes.string.isRequired,
   onSearchChange: PropTypes.func.isRequired,
   handleSearchSubmit: PropTypes.func.isRequired,
-  productArray: PropTypes.array.isRequired,
+  productArray: PropTypes.array,
 };
 
-export default InicioTemplate;
+export default HomeTemplate;

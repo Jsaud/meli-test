@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 //actions
 import { fetchProductsRequest } from "../../actions";
 //Components
-import InicioTemplate from "../components/templates/Home";
+import HomeTemplate from "../components/templates/Home";
 
-const Inicio = () => {
+const Home = () => {
   const [search, setSearch] = useState("");
 
   const dispatch = useDispatch();
@@ -40,7 +40,7 @@ const Inicio = () => {
 
   return (
     <>
-      <InicioTemplate
+      <HomeTemplate
         loading={loading}
         search={search}
         productArray={productArray}
@@ -51,4 +51,4 @@ const Inicio = () => {
   );
 };
 
-export default Inicio;
+export default Home;
