@@ -54,4 +54,6 @@ const LoaderHome = (props) => {
   );
 };
 
+
+
 export default LoaderHome;
