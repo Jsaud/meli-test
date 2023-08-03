@@ -26,7 +26,7 @@ const HomeTemplate = ({
           </div>
           <ProductCard productArray={productArray} />
         </div>
-      </div>x
+      </div>
     </>
   );
 };

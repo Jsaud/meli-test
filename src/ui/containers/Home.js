@@ -3,20 +3,21 @@ import { useDispatch, useSelector } from "react-redux";
 //actions
 import { fetchProductsRequest } from "../../actions";
 //Components
+import NotFound from "../components/organism/NotFound";
 import HomeTemplate from "../components/templates/Home";
 
 const Home = () => {
   const [search, setSearch] = useState("");
+  const [error, setError] = useState(false);
 
   const dispatch = useDispatch();
   const { data, loading } = useSelector((state) => state.products);
   const productArray = data?.results;
 
   const products = [
-    "zapatilla",
     "raquetas",
-    "pelotas",
-    "adidas",
+    "pelotas tenis",
+    "accesorios tenis",
     "padel",
     "tenis",
   ];
@@ -38,15 +39,26 @@ const Home = () => {
     dispatch(fetchProductsRequest(randomProducts));
   }, []);
 
+  useEffect(() => {
+    if(productArray?.length === 0){
+      setError(true)
+    }
+  }, [productArray]);
+
+
   return (
     <>
-      <HomeTemplate
-        loading={loading}
-        search={search}
-        productArray={productArray}
-        onSearchChange={onSearchChange}
-        handleSearchSubmit={handleSearchSubmit}
-      />
+      {error ? (
+        <NotFound />
+      ) : (
+        <HomeTemplate
+          loading={loading}
+          search={search}
+          productArray={productArray}
+          onSearchChange={onSearchChange}
+          handleSearchSubmit={handleSearchSubmit}
+        />
+      )}
     </>
   );
 };
